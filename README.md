@@ -3,21 +3,18 @@ This repository contains some IPython worksheets designed to demonstrate the rel
 Slides for a companion talk can be found [here](https://docs.google.com/presentation/d/1sGvM4S9nQByNv3_1aj4nH5ynvp_pQt5MI1hk7djMcwk/edit?usp=sharing).
 
 ## Contents
--------------
 
-The `exoplanets.ipynb` notebook demonstrates interactive plotting (tooltips, scroll and zoom, etc) with bokeh and altair.
+The `interactive_exoplanets.ipynb` notebook demonstrates interactive plotting (tooltips, scroll and zoom, cross-linking plots, etc) with bokeh and altair. In this example, we use properties of confirmed exoplanets to make a mass-radius diagram.
 
-The `gaia.ipynb` notebook scales this up to large datasets with vaex and holoviews.
+The `interactive_gaia.ipynb` notebook scales this up to large datasets with vaex and holoviews.
 
 ## Required software
--------------
 
 To run all of these notebooks, you'll need Python 3 with the standard scientific packages (numpy, matplotlib), [Jupyter labs (or notebooks)](http://jupyter.org/), pandas and astropy for data wrangling, and astroquery for data downloads.
 
 Additionally, you'll want some or all of these plotting packages:
 * bokeh
 * altair
-* glue
 * vaex
 * holoviews (with datashader)
 
@@ -25,7 +22,6 @@ I recommend installing the [Anaconda distribution](http://continuum.io/downloads
 
 ```
 pip install astroquery bokeh altair 
-conda install -c glueviz glueviz
 conda install -c conda-forge vaex
 conda install -c conda-forge holoviews
 ```
@@ -40,7 +36,6 @@ jupyter labextension install @pyviz/jupyterlab_holoviews
 ```
 
 ## Using these notebooks
--------------
 
 Download this repository by running:
 
