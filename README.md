@@ -4,6 +4,8 @@ Slides for a companion talk can be found [here](https://docs.google.com/presenta
 
 ## Contents
 
+The `animated_cepheids.ipynb` notebook shows how to make animated gifs or movies with matplotlib. As an example, we make a (somewhat cartoony) illustration of how Cepheid variable stars change in brightness over time using Gaia DR1 measurements.
+
 The `interactive_exoplanets.ipynb` notebook demonstrates interactive plotting (tooltips, scroll and zoom, cross-linking plots, etc) with bokeh and altair. In this example, we use properties of confirmed exoplanets to make a mass-radius diagram.
 
 The `interactive_gaia.ipynb` notebook scales this up to large datasets with vaex and holoviews.
