@@ -5,13 +5,14 @@ Helper functions to download data for tutorials.
 from astropy.utils.data import download_file
 from astropy.io import ascii
 from astropy.table import Table
+from astroquery.gaia import Gaia
 
 def get_confirmed_planets(cache=True, show_progress=True,
                             select=None):
     """
     Download (and optionally cache) a table from the `NExScI Exoplanet Archive 
                                 <http://exoplanetarchive.ipac.caltech.edu/index.html>`_.
-    Loosely based on the code from `astroquery <https://github.com/astropy/astroquery>`_.
+    Based on the code from `astroquery <https://github.com/astropy/astroquery>`_.
                                 
     Parameters
     ----------
@@ -46,3 +47,18 @@ def get_confirmed_planets(cache=True, show_progress=True,
     table['pl_name'] = pl_names
     
     return table
+    
+def get_cepheids():
+    """
+    Execute ADQL query for Gaia DR1 Cepheids using astroquery's TAP+ utils.
+    
+    Returns
+    -------
+    table : `~astropy.table`
+        Astropy table of requested data.
+    """
+    job = Gaia.launch_job("SELECT cep.*, gaia.ra, gaia.dec \
+        FROM gaiadr1.cepheid AS cep \
+        INNER JOIN gaiadr1.gaia_source as gaia \
+        on cep.source_id = gaia.source_id")
+    return job.get_results()
