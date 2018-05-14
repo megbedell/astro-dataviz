@@ -56,10 +56,10 @@ Download this repository by running:
 git clone https://github.com/megbedell/astro-dataviz
 ```
 
-Then go into the `astro-dataviz` directory and start a JupyterLab server:
+Then go into the `astro-dataviz` directory and start a Jupyter notebook server:
 
 ```
-jupyter lab
+jupyter notebook
 ```
 
-Click on a notebook file in the sidebar to run it.
+Click on a notebook file to run it.
