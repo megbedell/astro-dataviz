@@ -12,18 +12,23 @@ The `interactive_gaia.ipynb` notebook scales this up to large datasets with vaex
 
 ## Required software
 
-To run all of these notebooks, you'll need Python 3 with the standard scientific packages (numpy, matplotlib), [Jupyter labs (or notebooks)](http://jupyter.org/), pandas and astropy for data wrangling, and astroquery for data downloads.
+These notebooks run best with Python 3 and [Jupyter labs](http://jupyter.org/).
 
-Additionally, you'll want some or all of these plotting packages:
-* bokeh
-* altair
-* vaex
-* holoviews (with datashader)
+To run `animated_cepheids.ipynb` you'll just need a basic scientific stack (numpy, matplotlib, pandas) and astroquery. All of these are easy to install with pip.
 
-I recommend installing the [Anaconda distribution](http://continuum.io/downloads). You can then add the additional packages by running:
+To run `interactive_exoplanets.ipynb` you'll additionally need bokeh and altair, also available with pip. You'll also need to get a Jupyterlab extension to make the bokeh plots render:
 
 ```
-pip install astroquery bokeh altair 
+pip install bokeh altair
+jupyter labextension install jupyterlab_bokeh
+```
+
+For `interactive_gaia.ipynb`, you'll need holoviews and vaex. The installation for these is more complex and has the potential to interfere with your normal python environment. I recommend installing the [Anaconda distribution](http://continuum.io/downloads) and creating a virtual environment in which to install these packages. Here's a snippet of code to do this:
+
+```
+conda create -n dataviz_env python=3.6
+conda activate dataviz_env
+pip install jupyterlab pandas astropy 
 conda install -c conda-forge vaex
 conda install -c conda-forge holoviews
 ```
