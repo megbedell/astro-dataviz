@@ -12,22 +12,29 @@ The `interactive_gaia.ipynb` notebook scales this up to large datasets with vaex
 
 ## Required software
 
-These notebooks run best with Python 3 and [Jupyter labs](http://jupyter.org/).
+These notebooks run with Python 3 and [Jupyter notebooks](http://jupyter.org/).
 
 To run `animated_cepheids.ipynb` you'll just need a basic scientific stack (numpy, matplotlib, pandas) and astroquery. All of these are easy to install with pip.
 
-To run `interactive_exoplanets.ipynb` you'll additionally need bokeh and altair, also available with pip. You'll also need to get a Jupyterlab extension to make the bokeh plots render:
+To run `interactive_exoplanets.ipynb` you'll additionally need bokeh and altair, also available with pip:
 
 ```
 pip install bokeh altair
+```
+
+If you're going to run from a notebook, you're good to go. If you want to run in Jupyter Labs you'll need an extension to make the bokeh plots render:
+
+```
 jupyter labextension install jupyterlab_bokeh
 ```
 
-For `interactive_gaia.ipynb`, you'll need holoviews and vaex. The installation for these is more complex and has the potential to interfere with your normal python environment. I recommend installing the [Anaconda distribution](http://continuum.io/downloads) and creating a virtual environment in which to install these packages. Here's a snippet of code to do this:
+Note that altair is recommended for use with Jupyter Labs, but it still works in a notebook (with one extra line of setup code).
+
+For `interactive_gaia.ipynb`, you'll need holoviews and vaex. The installation for these is more complex and has the potential to interfere with your normal python environment. One good way of installing is using [Anaconda distribution](http://continuum.io/downloads) and creating a virtual environment in which to install these packages. Here's a snippet of code to do this:
 
 ```
 conda create -n dataviz_env python=3.6
-conda activate dataviz_env
+source activate dataviz_env
 pip install jupyterlab pandas astropy 
 conda install -c conda-forge vaex
 conda install -c conda-forge holoviews
@@ -35,10 +42,9 @@ conda install -c conda-forge holoviews
 
 (Some of the conda installs can be done in pip too, but I ran into install issues there that didn't come up with conda. Your mileage may vary.)
 
-Then make sure you have the correct JupyterLab extensions to make the interactive plots render properly:
+Then get the JupyterLab extension for holoviews:
 
 ```
-jupyter labextension install jupyterlab_bokeh
 jupyter labextension install @pyviz/jupyterlab_holoviews
 ```
 
