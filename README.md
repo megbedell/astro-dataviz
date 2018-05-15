@@ -8,7 +8,7 @@ The `animated_cepheids.ipynb` notebook shows how to make animated gifs or movies
 
 The `interactive_exoplanets.ipynb` notebook demonstrates interactive plotting (tooltips, scroll and zoom, cross-linking plots, etc) with bokeh and altair. In this example, we use properties of confirmed exoplanets to make a mass-radius diagram.
 
-The `interactive_gaia.ipynb` notebook scales this up to large datasets with vaex and holoviews.
+The `interactive_gaia.ipynb` notebook ~~scales this up to large datasets with vaex and holoviews~~ is an unfinished look at using vaex and holoviews to view Gaia data. Although it's not extremely usable at the moment, it does contain links to other tutorials that may be helpful.
 
 ## Required software
 
